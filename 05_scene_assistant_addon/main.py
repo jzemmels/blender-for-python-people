@@ -1,43 +1,67 @@
 import bpy
+import random
 
-class OBJECT_OT_setup_scene(bpy.types.Operator):
-    bl_idname = "object.setup_simple_scene"
-    bl_label = "Setup Simple Scene"
-    
-    def execute(self, context):
-        bpy.ops.object.select_all(action='SELECT')
-        bpy.ops.object.delete(use_global=False)
-        
-        # Add lighting
-        bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
-        
-        # Add camera
-        bpy.ops.object.camera_add(location=(7, -7, 5))
-        cam = bpy.context.active_object
-        cam.rotation_euler = (1.1, 0, 0.78)
-        
-        # Add floor
-        bpy.ops.mesh.primitive_plane_add(size=10, location=(0, 0, 0))
-        return {'FINISHED'}
+# 🧹 STEP 0: Clear the scene
+bpy.ops.object.select_all(action='SELECT')
+bpy.ops.object.delete()
 
-class VIEW3D_PT_scene_assistant(bpy.types.Panel):
-    bl_label = "Scene Assistant"
-    bl_idname = "VIEW3D_PT_scene_assistant"
-    bl_space_type = 'VIEW_3D'
-    bl_region_type = 'UI'
-    bl_category = 'Tools'
-    
-    def draw(self, context):
-        layout = self.layout
-        layout.operator("object.setup_simple_scene")
+# 🧱 STEP 1: Create a ground plane
+bpy.ops.mesh.primitive_plane_add(size=20, location=(0, 0, 0))
+ground = bpy.context.active_object
+ground.name = "VillageGround"
 
-def register():
-    bpy.utils.register_class(OBJECT_OT_setup_scene)
-    bpy.utils.register_class(VIEW3D_PT_scene_assistant)
+# 🏠 STEP 2: Create a single house
+def create_house(location):
+    # Base cube (house body)
+    bpy.ops.mesh.primitive_cube_add(size=1, location=location)
+    house = bpy.context.active_object
+    house.scale = (1, 1, 1)
+    house.location.z = 0.5  # Raise it above the ground
+    house.name = "HouseBase"
 
-def unregister():
-    bpy.utils.unregister_class(OBJECT_OT_setup_scene)
-    bpy.utils.unregister_class(VIEW3D_PT_scene_assistant)
+    # Roof (cone)
+    bpy.ops.mesh.primitive_cone_add(radius1=1.2, depth=1, location=location)
+    roof = bpy.context.active_object
+    roof.location.z = 1.5
+    roof.name = "HouseRoof"
 
-if __name__ == "__main__":
-    register()
+# Create one house at (0, 0)
+create_house((0, 0, 0))
+
+# 🧭 INTERFACE EXPLORATION:
+# Look at the Outliner — you should see “HouseBase” and “HouseRoof”
+# Select each object and inspect its dimensions and transforms.
+
+# 🏘️ STEP 3: Procedurally generate a grid of houses
+for x in range(-4, 5, 2):
+    for y in range(-4, 5, 2):
+        if random.random() < 0.8:  # Leave some plots empty
+            size = random.uniform(0.8, 1.2)
+            loc = (x + random.uniform(-0.2, 0.2), y + random.uniform(-0.2, 0.2), 0)
+            create_house(loc)
+
+# 🧭 VISUAL CHECK:
+# Switch to the Layout or Rendered view. Does your village look varied?
+# Rerun the script a few times — how does the layout change?
+
+# 🔗 RESOURCES
+# - [Object creation](https://docs.blender.org/api/current/bpy.ops.mesh.html)
+# - [Transformations](https://docs.blender.org/api/current/bpy.types.Object.html)
+# - [Random module](https://docs.python.org/3/library/random.html)
+# - [Procedural modeling with Python](https://www.youtube.com/watch?v=q3Z4EemR8gY)
+
+# 🌟 CHALLENGE 1:
+# Add variation in building height and width.
+# Try changing `house.scale.z` or adding taller roof cones.
+
+# 🌟 CHALLENGE 2:
+# Create different building "types" — maybe tall towers, or round huts using cylinders.
+# Use `random.choice` to select a building type per plot.
+
+# 🌟 CHALLENGE 3:
+# Add a central square (clear space in the middle), and maybe a big statue!
+# Bonus: use a different primitive or a built-in mesh for the statue.
+
+# 🌟 BONUS CHALLENGE:
+# Add trees (from Lesson 3) around the perimeter of the village.
+# Try scripting them to only appear outside a radius from the center.

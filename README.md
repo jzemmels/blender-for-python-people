@@ -14,14 +14,15 @@ This course helps Python programmers explore Blender’s creative world by writi
 - Creating your own custom panels and add-ons
 
 Each module includes:
+
 - ✅ A Python script (`main.py`) that you run in Blender’s scripting tab
-- 🎛️ A matching manual walkthrough using Blender’s interface (`manual_instructions.md`)
 - 🚀 Optional challenges for creativity and mastery
 
 ---
 
 ## 📁 Course Structure
 
+```
 blender-python-mini-course/ 
 ├── 01_hello_cube_world/ 
 ├── 02_scripted_room/ 
@@ -31,7 +32,7 @@ blender-python-mini-course/
 ├── CHALLENGES.md 
 ├── SETUP.md 
 └── README.md
-
+```
 
 ---
 
