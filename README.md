@@ -13,12 +13,11 @@ This beginner-friendly, project-based course is designed for developers with **i
 
 ```
 blender-python-mini-course/ 
-├── 00_setup/ # Blender install & scripting setup instructions 
 ├── 01_hello_cube_world/ # Your first Python-generated Blender object 
-├── 02_geometry_variations/ # Learn object types, locations, rotations, scaling 
-├── 03_materials_and_colors/ # Apply basic materials, colors, and transparency 
-├── 04_animation_basics/ # Create animation keyframes programmatically 
-├── 05_custom_collections/ # Organize scenes with custom collections 
+├── 02_scripted_room/ # Learn object types, locations, rotations, scaling 
+├── 03_random_forest/ # Apply basic materials, colors, and transparency 
+├── 04_animated_orbit/ # Create animation keyframes programmatically 
+├── 05_scene_assistant_addon/ # Organize scenes with custom collections 
 ├── LEARNING_RESOURCES.md # Resources to go beyond this course 
 └── README.md # You are here!
 ```
@@ -34,18 +33,6 @@ Each lesson is project-driven and includes:
 - 🖱️ **Manual Interface Guides** — Understand where settings show up in Blender.
 - 🚀 **Challenge Exercises** — Build intuition and skills through play.
 - 📚 **Linked Resources** — Read official docs or tutorials for each concept.
-
----
-
-## 📘 Course Lessons
-
-| #  | Lesson | Concepts Covered |
-|----|--------|------------------|
-| 01 | [Hello Cube World](01_hello_cube_world/) | Basic geometry creation |
-| 02 | [Scripted Room](02_scripted_room/) | Transforms and shape types |
-| 03 | [Random Forest](03_random_forest/) | Colors, materials, transparency |
-| 04 | [It Takes a Village](05_scene_assistant_addon/) | Keyframes and motion |
-| 05 | [](05_custom_collections/) | Scene organization and layers |
 
 ---
 
@@ -68,6 +55,18 @@ No installation of Python is necessary — Blender ships with its own interprete
 4. Click **Run Script** (play button or `Alt+P`).
 
 ✨ Your script will execute — and you’ll see the result in the 3D Viewport!
+
+---
+
+## 📘 Course Lessons
+
+| #  | Lesson | Concepts Covered |
+|----|--------|------------------|
+| 01 | [Hello Cube World](01_hello_cube_world/) | Basic geometry creation |
+| 02 | [This New House](02_scripted_room/) | Transforms and shape types |
+| 03 | [Random Forest](03_random_forest/) | Colors, materials, transparency |
+| 04 | [Animated Orbit](04_animated_orbit/) | Keyframes and motion |
+| 05 | [It Takes a Village](05_scene_assistant_addon/) | Scene organization and layers |
 
 ---
 
