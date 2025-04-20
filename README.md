@@ -23,18 +23,29 @@ blender-python-mini-course/
 └── README.md # You are here!
 ```
 
-
 ---
 
-## 🧠 Learning Goals
+## 🧠 What You’ll Learn
 
 Each lesson is project-driven and includes:
 
 - 🧩 **Templated Scripts** — You fill in the code to generate 3D content.
 - 🔎 **Exploration Prompts** — Learn through experimentation.
-- 🖱️ **Manual Interface Guides** — Understand where changes show up in Blender.
-- 🚀 **Challenge Exercises** — Take it further and deepen your understanding.
+- 🖱️ **Manual Interface Guides** — Understand where settings show up in Blender.
+- 🚀 **Challenge Exercises** — Build intuition and skills through play.
 - 📚 **Linked Resources** — Read official docs or tutorials for each concept.
+
+---
+
+## 📘 Course Lessons
+
+| #  | Lesson | Concepts Covered |
+|----|--------|------------------|
+| 01 | [Hello Cube World](01_hello_cube_world/) | Basic geometry creation |
+| 02 | [Scripted Room](02_scripted_room/) | Transforms and shape types |
+| 03 | [Random Forest](03_random_forest/) | Colors, materials, transparency |
+| 04 | [It Takes a Village](05_scene_assistant_addon/) | Keyframes and motion |
+| 05 | [](05_custom_collections/) | Scene organization and layers |
 
 ---
 
@@ -57,30 +68,6 @@ No installation of Python is necessary — Blender ships with its own interprete
 4. Click **Run Script** (play button or `Alt+P`).
 
 ✨ Your script will execute — and you’ll see the result in the 3D Viewport!
-
----
-
-## 🧠 What You’ll Learn
-
-Each lesson is project-driven and includes:
-
-- 🧩 **Templated Scripts** — You fill in the code to generate 3D content.
-- 🔎 **Exploration Prompts** — Learn through experimentation.
-- 🖱️ **Manual Interface Guides** — Understand where settings show up in Blender.
-- 🚀 **Challenge Exercises** — Build intuition and skills through play.
-- 📚 **Linked Resources** — Read official docs or tutorials for each concept.
-
----
-
-## 📘 Course Lessons
-
-| #  | Lesson | Concepts Covered |
-|----|--------|------------------|
-| 01 | [Hello Cube World](01_hello_cube_world/) | Basic geometry creation |
-| 02 | [Geometry Variations](02_geometry_variations/) | Transforms and shape types |
-| 03 | [Materials & Colors](03_materials_and_colors/) | Colors, materials, transparency |
-| 04 | [Animation Basics](04_animation_basics/) | Keyframes and motion |
-| 05 | [Custom Collections](05_custom_collections/) | Scene organization and layers |
 
 ---
 
@@ -108,8 +95,5 @@ Fork it, adapt it, remix it — and feel free to contribute back:
 ---
 
 Happy Blending! 🎨🐍  
-– The Blender Python Mini-Course Team
 
----
-
-This course was almost entirely generated using ChatGPT.
+(This course was almost entirely generated using ChatGPT)
